@@ -8,14 +8,26 @@ import Cart from "./pages/Cart";
 
 function App() {
   return (
+    // Fournit le contexte global du panier à toute l’application
     <CartProvider>
+
+      {/* Définition de toutes les routes de l’application */}
       <Routes>
-        {/* Parent route with layout */}
+
+        {/*
+          Route parente utilisant <Layout />
+          Le layout contient : Navbar + Footer + <Outlet />
+          Toutes les routes enfants ci-dessous seront affichées dans le <Outlet />.
+        */}
         <Route element={<Layout />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/cart" element={<Cart />} />
+
+          {/* Pages principales */}
+          <Route path="/" element={<Home />} />              {/* Page d’accueil */}
+          <Route path="/products" element={<Products />} />   {/* Liste des produits */}
+          <Route path="/cart" element={<Cart />} />           {/* Panier */}
+
         </Route>
+
       </Routes>
     </CartProvider>
   );
