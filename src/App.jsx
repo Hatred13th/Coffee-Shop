@@ -1,21 +1,22 @@
-import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import { CartProvider } from "./context/CartProvider";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+
+import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
 import Cart from "./pages/Cart";
 
 function App() {
-  const [activePage, setActivePage] = useState("home");
-
   return (
     <CartProvider>
-      <Navbar setActivePage={setActivePage} />
-      {activePage === "home" && <Home />}
-      {activePage === "products" && <Products />}
-      {activePage === "cart" && <Cart />}
-      <Footer />
+      <Routes>
+        {/* Parent route with layout */}
+        <Route element={<Layout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/cart" element={<Cart />} />
+        </Route>
+      </Routes>
     </CartProvider>
   );
 }

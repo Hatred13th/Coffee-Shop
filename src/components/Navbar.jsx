@@ -1,21 +1,15 @@
 import "./Navbar.css";
+import { NavLink } from "react-router-dom";
 
-function Navbar({ setActivePage }) {
+export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="logo">☕ Coffee Shop</div>
-
       <ul className="nav-links">
-       <li>
-          <a href="#home" onClick={() => setActivePage("home")}>Home</a>
-        </li>
-        <li>
-          <a href="#products" onClick={() => setActivePage("products")}>Products</a>
-        </li>
-        <li><a href="#cart" onClick={() => setActivePage("cart")}>Shopping Cart</a></li>
+        <li><NavLink to="/">Home</NavLink></li>
+        <li><NavLink to="/products">Products</NavLink></li>
+        <li><NavLink to="/cart">Cart</NavLink></li>
       </ul>
     </nav>
   );
 }
-
-export default Navbar;
