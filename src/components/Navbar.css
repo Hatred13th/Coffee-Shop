@@ -52,4 +52,18 @@
   font-weight: bold;
   color: #333;
 }
+.signup-btn {
+  padding: 6px 12px;
+  background: #7e4304; /* green or choose another color */
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.signup-btn:hover {
+  opacity: 0.8;
+  color: black;
+}
+
 

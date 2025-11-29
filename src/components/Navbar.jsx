@@ -24,12 +24,19 @@ export default function Navbar() {
       {/* Authentication section */}
       <div className="auth-section">
 
-        {/* If not logged in → show Login button */}
-        {!currentUser && (
-          <Link to="/login" className="login-btn">
-            Login
-          </Link>
-        )}
+        {/* If not logged in → show Login + Sign Up */}
+         {!currentUser && (
+  <>
+            <Link to="/login" className="login-btn">
+                Login
+            </Link>
+
+            <Link to="/signup" className="signup-btn">
+              Sign Up
+            </Link>
+          </>
+         )}
+
 
         {/* If logged in → show email + logout */}
         {currentUser && (

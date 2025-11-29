@@ -7,15 +7,27 @@ import Home from "./pages/Home";
 import Products from "./pages/Products";
 import Cart from "./pages/Cart";
 import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 
 import AdminRoute from "./components/AdminRoute";
 import AdminDashboard from "./pages/Admin/AdminDashboard";
+import AdminProducts from "./pages/Admin/AdminProducts";
+import AdminOrders from "./pages/Admin/AdminOrders";
 
 function App() {
   return (
     <AuthProvider>
       <CartProvider>
         <Routes>
+          <Route path="/admin/orders" element={<AdminRoute> <AdminOrders /> </AdminRoute>}/>
+          
+          {/*lets admin delete,edit and add products */}
+          <Route path="/admin/products"element={<AdminRoute> <AdminProducts/></AdminRoute>}/>
+
+
+        {/*sign up page */}
+        <Route path="/signup" element={<Signup />} />
+
 
           {/* Login page */}
           <Route path="/login" element={<Login />} />

@@ -29,6 +29,33 @@ export const AuthProvider = ({ children }) => {
     localStorage.removeItem("currentUser");
     setCurrentUser(null);
   };
+  useEffect(() => {
+  // Create default users if not already stored
+  const existingUsers = localStorage.getItem("users");
+
+  if (!existingUsers) {
+    const defaultUsers = [
+      {
+        id: 1,
+        email: "admin@coffee.com",
+        password: "admin123",
+        role: "admin"
+      },
+      {
+        id: 2,
+        email: "user@coffee.com",
+        password: "user123",
+        role: "user"
+      }
+    ];
+
+    localStorage.setItem("users", JSON.stringify(defaultUsers));
+  }
+
+  const savedUser = localStorage.getItem("currentUser");
+  if (savedUser) setCurrentUser(JSON.parse(savedUser));
+}, []);
+
 
   return (
     <AuthContext.Provider value={{ currentUser, login, logout }}>
