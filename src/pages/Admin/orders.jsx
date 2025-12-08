@@ -56,7 +56,7 @@ export default function Orders() {
   };
   return (
     <div style={{ fontFamily: "'Poppins', sans-serif", padding: "20px" }}>
-      <h2 style={{ marginBottom: "20px", color: "#4e342e" }}>Orders Management</h2>
+      <h2 style={{ marginBottom: "20px", color: "black" }}>Orders Management</h2>
       {/* Filters */}
       <div style={{ display: "flex", gap: "20px", marginBottom: "20px", alignItems: "center" }}>
         <div style={{ display: "flex", alignItems: "center", gap: "10px", background: "#fff", border: "1px solid #ccc", padding: "8px 12px", borderRadius: "6px", width: "260px",color:"black" }}>
